@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "mk-prev-db-development",
+    "dialect": "sqlite",
+    "storage": "./db/mk-prev-db-dev.sqlite3"
+  },
+  "test": {
+    "database": "mk-prev-db-test",
+    "dialect": "sqlite",
+    "storage": "./db/mk-prev-db-test.sqlite3"
+  },
+  "production": {
+    "database": "mk-prev-db-product",
+    "dialect": "sqlite",
+    "storage": "./db/mk-prev-db.sqlite3"
+  }
+}
