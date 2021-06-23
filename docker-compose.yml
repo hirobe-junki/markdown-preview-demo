@@ -1,0 +1,11 @@
+version: "3"
+services:
+  md_prev_demo:
+    build: app
+    container_name: md_prev_demo
+    image: node-express-dev:1.0
+    tty: true
+    volumes:
+      - ./app:/app
+    ports:
+      - "8080:3000"

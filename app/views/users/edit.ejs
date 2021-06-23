@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/sanitize.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body class="container">
+    <header>
+      <h1 class="display-4"><%= title %></h1>
+      <div class="header-operation-area">
+        <div class="header-links">
+          <a class="header-links__link" href="/users">戻る</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <% if (err) { %>
+      <ol class="text-danger">
+        <% for (let i in err.errors) { %>
+        <li><%= err.errors[i].message %></li>
+        <% } %>
+      </ol>
+      <% } %>
+      <form class="input-form" method="post" action="/users/edit">
+        <div class="input-form-groups">
+          <input
+            type="hidden"
+            name="id"
+            id="id"
+            value="<%= form.id %>"
+            class="form-control"
+          />
+          <div class="form-group">
+            <label for="name">NAME</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value="<%= form.name %>"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="pass">PASSWORD</label>
+            <input
+              type="text"
+              name="pass"
+              id="pass"
+              value="<%= form.pass %>"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mail">MAIL</label>
+            <input
+              type="text"
+              name="mail"
+              id="mail"
+              value="<%= form.mail %>"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="age">AGE</label>
+            <input
+              type="number"
+              name="age"
+              id="age"
+              value="<%= form.age %>"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <input type="submit" value="更新" class="btn btn-primary" />
+      </form>
+    </main>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+  </body>
+</html>

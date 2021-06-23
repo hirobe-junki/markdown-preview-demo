@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/sanitize.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1 class="display-4"><%= title %></h1>
+      <div class="header-operation-area">
+        <div class="header-links">
+          <a class="header-links__link" href="/">戻る</a>
+        </div>
+        <div class="header-buttons">
+          <button
+            id="add-button"
+            class="btn btn-primary header-buttons__button"
+          >
+            新規登録
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>MAIL</th>
+          <th>AGE</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% for (let i in content) { %>
+        <tr>
+          <td><%= content[i].id %></td>
+          <td><%= content[i].name %></td>
+          <td><%= content[i].mail %></td>
+          <td><%= content[i].age %></td>
+          <td>
+            <button
+              class="btn btn-secondary btn-sm"
+              data-select-button-id="<%= content[i].id %>"
+            >
+              修正
+            </button>
+          </td>
+          <td>
+            <form method="post" action="/users/delete">
+              <input type="hidden" name="id" value="<%= content[i].id %>" />
+              <input type="submit" value="削除" class="btn btn-danger btn-sm" />
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </main>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+  </body>
+</html>

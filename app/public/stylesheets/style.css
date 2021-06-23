@@ -1,0 +1,39 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.header-operation-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.header-buttons {
+  margin-left: auto;
+}
+
+.header-buttons__button {
+  margin-left: 8px;
+}
+
+.header-links {
+  height: 38px;
+  line-height: 38px;
+}
+
+.header-links__link {
+  margin-right: 8px;
+}
+
+.input-form {
+  margin-bottom: 8px;
+}
+
+.input-form-groups {
+  margin-bottom: 24px;
+}

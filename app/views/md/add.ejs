@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/sanitize.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1 class="display-4 text-primary"><%= title %></h1>
+    </header>
+    <main>
+      <form method="post" action="/md/add">
+        <div class="form-groups">
+          <div class="form-group">
+            <label>TITLE</label>
+            <input type="text" id="title" name="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>CONTENT</label>
+            <textarea
+              id="content"
+              name="content"
+              rows="10"
+              class="form-control"
+            ></textarea>
+          </div>
+        </div>
+        <input type="submit" value="登録" class="btn btn-primary" />
+      </form>
+      <p class="mt-4"><a href="/md">&lt;&lt; Top へ戻る</a></p>
+    </main>
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+  </body>
+</html>
