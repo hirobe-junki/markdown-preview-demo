@@ -1,4 +1,4 @@
-# markdown-preview-app
+# markdown-preview-demo
 
 ## docker起動
 ```bash
